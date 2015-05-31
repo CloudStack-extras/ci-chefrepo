@@ -1,0 +1,1 @@
+package ['rpm-build', 'createrepo', 'tomcat', 'ws-commons-util', 'genisoimage', 'MySQL-python', 'maven']

@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: acs-jenkins
-# Recipe:: slave
+# Recipe:: swift-client
 #
 # Copyright 2015, cloudstack.apache.org
 #
@@ -17,4 +17,5 @@
 # limitations under the License.
 #
 
-package ['rpm-build']
+easy_install_package "python-swiftclient"
+easy_install_package "python-keystoneclient"
