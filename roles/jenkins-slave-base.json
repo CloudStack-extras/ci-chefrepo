@@ -1,0 +1,26 @@
+{
+  "name": "jenkins-slave-base",
+  "description": "basic requirement of a Jenkins slave for http://jenkins.buildacloud.org/",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "chef-client": {
+      "interval": 600
+    },
+    "java": {
+      "jdk_version": 7
+    },
+    "users": [
+      "jenkins-acs"
+    ]
+  },
+  "run_list": [
+    "recipe[chef-client]",
+    "recipe[user::data_bag]",
+    "recipe[java]",
+    "recipe[java::set_java_home]",
+    "recipe[maven]",
+    "recipe[build-essential]",
+    "recipe[git]",
+    "recipe[acs-jenkins::slave]"
+  ]
+}
