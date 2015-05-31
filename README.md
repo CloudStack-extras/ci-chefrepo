@@ -19,7 +19,7 @@ Contributing
 
 License and Authors
 -------------------
-- Author:: Pierre-Luc Dion (<pdion891 @ apache dot org>)
+- Author:: Pierre-Luc Dion (<pdion891@apache.org>)
 
 ```text
 Copyright:: Copyright (c) 2015 Apache.org
