@@ -1,31 +1,38 @@
-The chef-repo
-===============
-All installations require a central workspace known as the chef-repo. This is a place where primitive objects--cookbooks, roles, environments, data bags, and chef-repo configuration files--are stored and managed.
+CloudStack ci-chefrepo
+======================
 
-The chef-repo should be kept under version control, such as [git](http://git-scm.org), and then managed as if it were source code.
+Chef cookbooks repository used for Apache CloudStack Continous Integration tests infrastructure.
+This collection of cookbooks are used to build and manage dependency for Jenkins slaves of http://jenkins.buildacloud.org/
 
-Knife Configuration
+current state = under tests
+
+
+Contributing
+------------
+
+1. Fork the repository on Github
+2. Create a named feature branch (like `add_component_x`)
+3. Write your change
+4. Write tests for your change (if applicable)
+5. Run the tests, ensuring they all pass
+6. Submit a Pull Request using Github
+
+License and Authors
 -------------------
-Knife is the [command line interface](https://docs.chef.io/knife.html) for Chef. The chef-repo contains a .chef directory (which is a hidden directory by default) in which the Knife configuration file (knife.rb) is located. This file contains configuration settings for the chef-repo.
+- Author:: Pierre-Luc Dion (<pdion891@apache.org>)
 
-The knife.rb file is automatically created by the starter kit. This file can be customized to support configuration settings used by [cloud provider options](https://docs.chef.io/plugin_knife.html) and custom [knife plugins](https://docs.chef.io/plugin_knife_custom.html).
+```text
+Copyright:: Copyright (c) 2015 Apache.org
 
-Also located inside the .chef directory are .pem files, which contain private keys used to authenticate requests made to the Chef server. The USERNAME.pem file contains a private key unique to the user (and should never be shared with anyone). The ORGANIZATION-validator.pem file contains a private key that is global to the entire organization (and is used by all nodes and workstations that send requests to the Chef server).
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-More information about knife.rb configuration options can be found in [the documentation for knife](https://docs.chef.io/config_rb_knife.html).
+    http://www.apache.org/licenses/LICENSE-2.0
 
-Cookbooks
----------
-A cookbook is the fundamental unit of configuration and policy distribution. A sample cookbook can be found in `cookbooks/starter`. After making changes to any cookbook, you must upload it to the Chef server using knife:
-
-    $ knife upload cookbooks/starter
-
-For more information about cookbooks, see the example files in the `starter` cookbook.
-
-Roles
------
-Roles provide logical grouping of cookbooks and other roles. A sample role can be found at `roles/starter.rb`.
-
-Getting Started
--------------------------
-Now that you have the chef-repo ready to go, check out [Learn Chef](https://learn.chef.io/) to proceed with your workstation setup. If you have any questions about Chef you can always ask [our support team](https://www.chef.io/support/) for a helping hand.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
