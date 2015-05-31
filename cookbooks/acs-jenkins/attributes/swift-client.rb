@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: acs-jenkins
-# Recipe:: swift-client
+# Attributes:: swift-client
 #
 # Copyright 2015, cloudstack.apache.org
 #
@@ -16,13 +16,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-include_recipe 'python'
-python_pip "python-swiftclient" 
-python_pip "python-keystoneclient"
-
-#a = data_bag_item(node['swift']['databag'],node['swift']['account'])
-file '/home/jenkins/openrc.sh' do
-  content data_bag_item(node['swift']['databag'],node['swift']['account'])['openrc']
-  action :create
-end
+default['swift']['databag'] = 'swift'
+default['swift']['account'] = 'asf-pdion'
