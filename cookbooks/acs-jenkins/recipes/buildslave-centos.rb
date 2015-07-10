@@ -17,3 +17,10 @@
 # limitations under the License.
 #
 package node['acs-jenkins']['pkgs']
+
+PGP_ID = data_bag_item('pgp', 'cloudstack')
+
+bsw_gpg_load_key_from_string 'a string key' do
+    key_contents PGP_ID['private']
+    for_user 'jenkins' # The user you want to install the key to
+end

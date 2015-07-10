@@ -26,7 +26,7 @@ default['java']['jdk']['8']['install_path']  = '/usr/lib/jvm/jdk1.8.0_45'
 default['acs-jenkins']['pkgs'] = value_for_platform(
   %w(centos redhat) => {
     %w(6.0 6.1 6.2 6.3 6.4 6.5 6.6) => ['rpm-build', 'createrepo', 'tomcat6', 'ws-commons-util', 'genisoimage', 'MySQL-python', 'expect'],
-    'default' => ['rpm-build', 'createrepo', 'tomcat', 'ws-commons-util', 'genisoimage', 'MySQL-python', 'maven', 'expect']
+    'default' => ['rpm-build', 'rpm-sign', 'createrepo', 'tomcat', 'ws-commons-util', 'genisoimage', 'MySQL-python', 'maven', 'expect']
   },
 #  'ubuntu' => {
 #    %w(12.04 12.10 13.04 13.10 14.04) => 'lxc-docker',
